@@ -247,7 +247,7 @@ namespace InterfacePC
 
         private void btnDesconectar_Click(object sender, EventArgs e)
         {
-            SerialPort.Close();
+            
             btnConectar.Enabled = true;
             btnDesconectar.Enabled = false;
             btnLeituraRapida.Enabled = false; // Botão de leitura rápida
@@ -255,6 +255,7 @@ namespace InterfacePC
             radioButton1.Enabled = false; // Mantém o botão desativado
             cBoxCOMs.Enabled = true;
             txtBoxSerialRx.Text = "Arduino Desconectado!";
+            SerialPort.Close();
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -385,6 +386,8 @@ namespace InterfacePC
             cBoxPeso1.SelectedIndex = 0;
             cBoxPeso2.SelectedIndex = 0;
             cBoxPeso3.SelectedIndex = 0;
+            txtBoxSerialRx.Text = "Bem vindo! Conecte ao arduiuno!";
+
         }
 
         private void groupBoxControleMotor_Enter(object sender, EventArgs e)
@@ -453,7 +456,9 @@ namespace InterfacePC
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SerialPort.Write("leitura,");
+            SerialPort.Write("leitura,1"); // 1- DESEJAMOS SABER O VALOR LIDO
+
+
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -461,6 +466,14 @@ namespace InterfacePC
             //txtBoxRRecebida.Text = ""; // Resistências lidas
             txtBoxSerialRx.Text = "Desabilitado a opção de leitura externa!";
             btnLeituraRapida.Enabled = false;
+
+            SerialPort.Write("leitura,0"); //Cancelos a leitura rápida
+
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            SerialPort.Close();
         }
 
         private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)

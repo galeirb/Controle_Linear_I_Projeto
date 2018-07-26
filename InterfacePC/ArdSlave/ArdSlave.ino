@@ -9,11 +9,15 @@ const int pin[pin_qtd] = { 2, 3, 4, 5, 6, 7 };
 const float r1[pin_qtd] = { 62.0, 221.0, 9780.0, 4620.0, 327.0 };
 float ref;
 
+char c;
+int x;
+
 
 void setup() {
 	Serial.begin(9600);
 	Wire.begin(15); // MEGA - 15
-	Wire.onReceive(receiveEvent); //Recepção dos dados (chama função auxiliar)
+	Wire.onReceive(receiveEvent); //Recepï¿½ï¿½o dos dados (chama funï¿½ï¿½o auxiliar)
+  
 	for (int i = 0; i<pin_qtd; i++) {
 		pinMode(pin[i], OUTPUT);
 		digitalWrite(pin[i], LOW);
@@ -32,6 +36,23 @@ float tensaoMedia() {
 
 float calcularResistencia(float r, float v) {
 	return r / (5.0 / v - 1.0);
+}
+
+void receiveEvent(int howMany)
+{
+  while (1 < Wire.available()) //Loop para receber toda String de dados
+  {
+    if (Wire.read() == "1"); {
+    	Serial.print("Deu certo");           //Imprime na Serial
+    }  
+
+    if (Wire.read() == "1")
+  	{
+  		Serial.print("Fechado"); 
+  	}  
+    
+  }
+ 	 
 }
 
 void loop() {
