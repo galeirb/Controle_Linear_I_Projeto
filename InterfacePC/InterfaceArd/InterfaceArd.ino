@@ -1,11 +1,16 @@
-#include <Wire.h>
+#include <Wire.h> // Protocolo I2C
 
-String instrucao_rx, valor1_str, valor2_str, valor3_str, str_temp,velocidade_str,sentido_str;
-String h;
-int velocidade, qtd1,qtd2,qtd3;
+// instrucao_rx = Diferencia quais sãos os valores (valor1, valor2 e valor3)
+// valor1_str,valor2_str e valor3_str = Valores das resistências requeridas
+
+
+String instrucao_rx, valor1_str, valor2_str, valor3_str, velocidade_str, str_temp; //sentido_str;
+String valores; // h
+int qtd1,qtd2,qtd3; //velocidade
 float r1, r2, r3, lido_m1,lido_m2,lido_m3, r_ref,r1_lido,r2_lido,r3_lido;
 char d;
-int raw1,raw2,raw3;
+
+int raw1,raw2,raw3,i;
 int Vin = 5;
 float Vout1,Vout2,Vout3;
 /////////// DECLARAR AS RESIST�NCIAS DE REFER�NCIA ///////////
@@ -17,7 +22,7 @@ float buffer1,buffer2,buffer3 = 0;
 
 void setup() {
 	Serial.begin(9600);
-	Wire.begin(8);
+	Wire.begin(8); //Nano - 8
 	pinMode(13, OUTPUT);
 }
 
@@ -28,13 +33,15 @@ void loop() {
 		if (inst == ',') {
 
 			if (instrucao_rx == "receberv1") {
-				str_temp = Serial.readString();
-				valor1_str = str_temp;
-				r1 = valor1_str.toFloat();
-				Serial.print("-- Valor de R1 recebido: ");
+				str_temp = Serial.readString(); // Valor em formado de String - Caractere
+				valor1_str = str_temp; // Nessa variável possuimos o valor que queremos
+				r1 = valor1_str.toFloat(); // Valor no formato Float - Número
+
+				// Manda esses dados para o PC
+				Serial.print("-- Valor de R1 recebido: "); 
 				Serial.print(valor1_str);
 				Serial.println(" ohms");
-				str_temp = "";
+				str_temp = ""; // Deixa a variável em branco
 			}
 
 			if (instrucao_rx == "receberv2") {
@@ -57,6 +64,8 @@ void loop() {
 				str_temp = "";
 			}
 
+			// Instruções para o controle do sentido do motor pelo software
+			/*
 			if (instrucao_rx == "sentido") {
 				str_temp = Serial.readString();
 				sentido_str = str_temp;
@@ -69,8 +78,10 @@ void loop() {
 				Serial.println(sentido_str);
 				str_temp = "";
 			}
+			*/
 
-			if (instrucao_rx == "velocidade") {
+			// Instruções para o controle de velocidade do motor pelo software
+			/*if (instrucao_rx == "velocidade") {
 				str_temp = Serial.readString();
 				velocidade_str = str_temp;
 				velocidade = velocidade_str.toInt();
@@ -83,16 +94,34 @@ void loop() {
 				Serial.print(velocidade_str);
 				Serial.println(" rpm\n");
 				str_temp = "";
-			}
+			}*/
 
 			/////////
-			instrucao_rx = "";
+			instrucao_rx = ""; // Zera a variável, depois de ter pego os valores
 			/////////
 		}
 		else {
-			instrucao_rx += inst;
+			instrucao_rx += inst; // instrucao_rx = instrucao_rx + inst
 		}
 	}
+
+		if (i<3)
+		{
+			i+=1;
+			
+      valores = strcat("Valores,",valor1_str,",",valor2_str",",valor3_str);
+		}
+		else
+		{
+			Wire.beginTransmission(15); // O enderenço que queremos transmitir
+			Wire.write("Exemplo:");
+			Wire.write(valor1_str);
+			Wire.endTransmission; // Acaba a transmissão com esse dispositivo
+			i = 0;
+			Serial.printf(valores);
+		}
+	
+	
 /*
 	/////////// TRECHO PARA SERVO 1 ///////////
 	raw1 = analogRead(A0);
