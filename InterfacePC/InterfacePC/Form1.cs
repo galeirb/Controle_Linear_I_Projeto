@@ -16,7 +16,7 @@ namespace InterfacePC
     {
 
         double valor1, valor2, valor3; //Variáveis para guardar os valores recebidos
-        string direcao, RxString;  // Ver depois para tirar essa variável de direção
+        string RxString; 
 
         public Form1()
         {
@@ -111,45 +111,58 @@ namespace InterfacePC
         {
             try
             {
-                switch (cBoxPeso1.SelectedIndex)
+                if (txtBoxValor1.Text != "")
                 {
-                    case 0:
-                        valor1 = Convert.ToDouble(txtBoxValor1.Text);
-                        break;
-                    case 1:
-                        valor1 = Convert.ToDouble(txtBoxValor1.Text) * (1000);
-                        break;
-                    case 2:
-                        valor1 = Convert.ToDouble(txtBoxValor1.Text) * (1000000);
-                        break;
+                    switch (cBoxPeso1.SelectedIndex)
+                    {
+                        case 0:
+                            valor1 = Convert.ToDouble(txtBoxValor1.Text);
+                            break;
+                        case 1:
+                            valor1 = Convert.ToDouble(txtBoxValor1.Text) * (1000);
+                            break;
+                        case 2:
+                            valor1 = Convert.ToDouble(txtBoxValor1.Text) * (1000000);
+                            break;
 
+                    }
                 }
-                switch (cBoxPeso2.SelectedIndex)
+
+                if (txtBoxValor2.Text != "")
                 {
-                    case 0:
-                        valor2 = Convert.ToDouble(txtBoxValor2.Text);
-                        break;
-                    case 1:
-                        valor2 = Convert.ToDouble(txtBoxValor2.Text) * (1000);
-                        break;
-                    case 2:
-                        valor2 = Convert.ToDouble(txtBoxValor2.Text) * (1000000);
-                        break;
+                    switch (cBoxPeso2.SelectedIndex)
+                    {
+                        case 0:
+                            valor2 = Convert.ToDouble(txtBoxValor2.Text);
+                            break;
+                        case 1:
+                            valor2 = Convert.ToDouble(txtBoxValor2.Text) * (1000);
+                            break;
+                        case 2:
+                            valor2 = Convert.ToDouble(txtBoxValor2.Text) * (1000000);
+                            break;
 
+                    }
                 }
-                switch (cBoxPeso3.SelectedIndex)
+
+                if (txtBoxValor3.Text != "")
                 {
-                    case 0:
-                        valor3 = Convert.ToDouble(txtBoxValor3.Text);
-                        break;
-                    case 1:
-                        valor3 = Convert.ToDouble(txtBoxValor3.Text) * (1000);
-                        break;
-                    case 2:
-                        valor3 = Convert.ToDouble(txtBoxValor3.Text) * (1000000);
-                        break;
+                    switch (cBoxPeso3.SelectedIndex)
+                    {
+                        case 0:
+                            valor3 = Convert.ToDouble(txtBoxValor3.Text);
+                            break;
+                        case 1:
+                            valor3 = Convert.ToDouble(txtBoxValor3.Text) * (1000);
+                            break;
+                        case 2:
+                            valor3 = Convert.ToDouble(txtBoxValor3.Text) * (1000000);
+                            break;
 
+                    }
                 }
+
+                    
             }
             catch
             {
@@ -158,6 +171,7 @@ namespace InterfacePC
 
         }
 
+        /* 
         private async void ativarMotor()
         {
 
@@ -179,6 +193,7 @@ namespace InterfacePC
             SerialPort.WriteLine("direcao,");
             SerialPort.WriteLine(direcao);
         }
+        */
 
         private void btnConectar_Click_1(object sender, EventArgs e)
         {
@@ -188,6 +203,7 @@ namespace InterfacePC
                 {
                     SerialPort.PortName = cBoxCOMs.Items[cBoxCOMs.SelectedIndex].ToString();
                     SerialPort.Open();
+                    txtBoxSerialRx.Text = "Arduino Conectado!";
                     // Mandar instrução para aparecer no display que está conectado
                 }
                 catch
@@ -215,6 +231,7 @@ namespace InterfacePC
 
             }
             btnConectar.Enabled = false;
+            radioButton1.Enabled = true;
             btnDesconectar.Enabled = true;
         }
 
@@ -233,7 +250,11 @@ namespace InterfacePC
             SerialPort.Close();
             btnConectar.Enabled = true;
             btnDesconectar.Enabled = false;
+            btnLeituraRapida.Enabled = false; // Botão de leitura rápida
+            radioButton2.Checked = true; // Deixa apenas selecionado o OFF
+            radioButton1.Enabled = false; // Mantém o botão desativado
             cBoxCOMs.Enabled = true;
+            txtBoxSerialRx.Text = "Arduino Desconectado!";
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
@@ -248,8 +269,12 @@ namespace InterfacePC
             txtBoxRRecebida.Text = "";
             txtBoxSerialRx.Text = "";
             btnDesconectar.Enabled = false;
+            btnLeituraRapida.Enabled = false;
+            radioButton1.Enabled = false; // Mantém o botão desativado
+            radioButton2.Checked = true;
             cBoxCOMs.Enabled = true;
             btnConectar.Enabled = true;
+            txtBoxSerialRx.Text = "Arduino Desconectado!";
 
             // Mandar uma instrução para limpar a tela LCD
             SerialPort.Close();
@@ -260,12 +285,15 @@ namespace InterfacePC
         {
             try
             {
-                new Working().Show();
+                //new Working().Show(); //Melhorá a tela de carregamento
      
                 calculaValores(); // Pega os dados inseridos e coloca-se os pesos
+
+
                 string send1 = String.Format(Convert.ToString(valor1)); // Manda o valor 1
                 string send2 = String.Format(Convert.ToString(valor2)); // Manda o valor 2
                 string send3 = String.Format(Convert.ToString(valor3)); // Manda o valor 3
+                               
 
                 // Valores recebidos do Arduino (Confirmação)
                 SerialPort.Write("receberv1,");
@@ -283,6 +311,8 @@ namespace InterfacePC
 
                 await Task.Delay(1500);
 
+                txtBoxSerialRx.Text = "Valores enviados para o Arduino!";
+
                 //ativarMotor();
 
                 // Adicionar um código que faça sumir a janela de carregamento
@@ -291,11 +321,11 @@ namespace InterfacePC
             {
                 // Adicionar um código que faça sumir a janela de carregamento
 
-                DialogResult res = MessageBox.Show("Tem erro aê meu parsero...", "Ih rapaz...", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+                DialogResult res = MessageBox.Show("Verifique se o Arduino está conectado e as resistências foram inseridas.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+        /*
         private async void numericVelocidade_ValueChanged(object sender, EventArgs e)
         {
             
@@ -312,6 +342,8 @@ namespace InterfacePC
                 DialogResult res = MessageBox.Show("Vc tem que tá conectado ao arduino amigão.....", "Assim não rola.....", MessageBoxButtons.OK, MessageBoxIcon.Error);            
             }
         }
+        */
+
 
         private void btnNaoClica_Click(object sender, EventArgs e)
         {
@@ -355,6 +387,60 @@ namespace InterfacePC
             cBoxPeso3.SelectedIndex = 0;
         }
 
+        private void groupBoxControleMotor_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBoxSerialRx_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            txtBoxValor1.Text = "";
+            txtBoxValor2.Text = "";
+            txtBoxValor3.Text = "";
+            //cBoxCOMs.SelectedIndex = -1;
+            cBoxPeso1.SelectedIndex = 0;
+            cBoxPeso2.SelectedIndex = 0;
+            cBoxPeso3.SelectedIndex = 0;
+            txtBoxRRecebida.Text = ""; // Resistências lidas
+            txtBoxSerialRx.Text = "Habilitado a opção de leitura externa!";
+            btnLeituraRapida.Enabled = true;
+
+
+
+
+            if (SerialPort.IsOpen == true)
+            {
+
+            }
+
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cBoxPeso2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBoxValor1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnAuto_Click(object sender, EventArgs e)
         {
             txtBoxValor1.Text = "220";
@@ -365,15 +451,27 @@ namespace InterfacePC
             cBoxPeso3.SelectedIndex = 2;
         }
 
-        private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            SerialPort.Write("leitura,");
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            //txtBoxRRecebida.Text = ""; // Resistências lidas
+            txtBoxSerialRx.Text = "Desabilitado a opção de leitura externa!";
+            btnLeituraRapida.Enabled = false;
+        }
+
+        private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        { //Quando temos alguma coisa na porta Serial, chamamos "trataDadoRecebido" 
             RxString = SerialPort.ReadExisting();
             this.Invoke(new EventHandler(trataDadoRecebido));
         }
 
         private void trataDadoRecebido(object sender, EventArgs e)
         {
-            txtBoxRRecebida.AppendText(RxString);
+            txtBoxRRecebida.AppendText(RxString); // Mostra todos os dados recebidos pelo arduino
 
         }
 

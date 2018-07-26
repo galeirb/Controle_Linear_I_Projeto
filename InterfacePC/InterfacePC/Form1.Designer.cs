@@ -32,11 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label4 = new System.Windows.Forms.Label();
             this.txtBoxSerialRx = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.rBtnAntiHorario = new System.Windows.Forms.RadioButton();
-            this.rBtnHorario = new System.Windows.Forms.RadioButton();
-            this.groupBoxControleMotor = new System.Windows.Forms.GroupBox();
-            this.numericVelocidade = new System.Windows.Forms.NumericUpDown();
             this.SerialPort = new System.IO.Ports.SerialPort(this.components);
             this.timerCOM = new System.Windows.Forms.Timer(this.components);
             this.label3 = new System.Windows.Forms.Label();
@@ -57,10 +52,13 @@
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnAuto = new System.Windows.Forms.Button();
             this.btnNaoClica = new System.Windows.Forms.Button();
-            this.groupBoxControleMotor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericVelocidade)).BeginInit();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.btnLeituraRapida = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
@@ -81,64 +79,7 @@
             this.txtBoxSerialRx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtBoxSerialRx.Size = new System.Drawing.Size(445, 85);
             this.txtBoxSerialRx.TabIndex = 20;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(87, 90);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Velocidade";
-            // 
-            // rBtnAntiHorario
-            // 
-            this.rBtnAntiHorario.AutoSize = true;
-            this.rBtnAntiHorario.Location = new System.Drawing.Point(113, 30);
-            this.rBtnAntiHorario.Name = "rBtnAntiHorario";
-            this.rBtnAntiHorario.Size = new System.Drawing.Size(78, 17);
-            this.rBtnAntiHorario.TabIndex = 2;
-            this.rBtnAntiHorario.Text = "Anti-horário";
-            this.rBtnAntiHorario.UseVisualStyleBackColor = true;
-            // 
-            // rBtnHorario
-            // 
-            this.rBtnHorario.AutoSize = true;
-            this.rBtnHorario.Checked = true;
-            this.rBtnHorario.Location = new System.Drawing.Point(48, 30);
-            this.rBtnHorario.Name = "rBtnHorario";
-            this.rBtnHorario.Size = new System.Drawing.Size(59, 17);
-            this.rBtnHorario.TabIndex = 1;
-            this.rBtnHorario.TabStop = true;
-            this.rBtnHorario.Text = "Horário";
-            this.rBtnHorario.UseVisualStyleBackColor = true;
-            // 
-            // groupBoxControleMotor
-            // 
-            this.groupBoxControleMotor.Controls.Add(this.numericVelocidade);
-            this.groupBoxControleMotor.Controls.Add(this.label2);
-            this.groupBoxControleMotor.Controls.Add(this.rBtnAntiHorario);
-            this.groupBoxControleMotor.Controls.Add(this.rBtnHorario);
-            this.groupBoxControleMotor.Location = new System.Drawing.Point(23, 161);
-            this.groupBoxControleMotor.Name = "groupBoxControleMotor";
-            this.groupBoxControleMotor.Size = new System.Drawing.Size(239, 119);
-            this.groupBoxControleMotor.TabIndex = 19;
-            this.groupBoxControleMotor.TabStop = false;
-            this.groupBoxControleMotor.Text = "Controle do motor";
-            // 
-            // numericVelocidade
-            // 
-            this.numericVelocidade.Location = new System.Drawing.Point(95, 65);
-            this.numericVelocidade.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.numericVelocidade.Name = "numericVelocidade";
-            this.numericVelocidade.Size = new System.Drawing.Size(45, 20);
-            this.numericVelocidade.TabIndex = 25;
-            this.numericVelocidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericVelocidade.ValueChanged += new System.EventHandler(this.numericVelocidade_ValueChanged);
+            this.txtBoxSerialRx.TextChanged += new System.EventHandler(this.txtBoxSerialRx_TextChanged);
             // 
             // SerialPort
             // 
@@ -223,6 +164,7 @@
             this.cBoxPeso2.Name = "cBoxPeso2";
             this.cBoxPeso2.Size = new System.Drawing.Size(47, 21);
             this.cBoxPeso2.TabIndex = 6;
+            this.cBoxPeso2.SelectedIndexChanged += new System.EventHandler(this.cBoxPeso2_SelectedIndexChanged);
             // 
             // txtBoxValor2
             // 
@@ -255,7 +197,7 @@
             this.groupBox1.Controls.Add(this.cBoxPeso1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtBoxValor1);
-            this.groupBox1.Location = new System.Drawing.Point(23, 31);
+            this.groupBox1.Location = new System.Drawing.Point(22, 20);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(271, 108);
             this.groupBox1.TabIndex = 14;
@@ -278,6 +220,7 @@
             this.txtBoxValor1.Name = "txtBoxValor1";
             this.txtBoxValor1.Size = new System.Drawing.Size(48, 20);
             this.txtBoxValor1.TabIndex = 0;
+            this.txtBoxValor1.TextChanged += new System.EventHandler(this.txtBoxValor1_TextChanged);
             // 
             // btnIniciar
             // 
@@ -346,20 +289,69 @@
             this.btnNaoClica.UseVisualStyleBackColor = false;
             this.btnNaoClica.Click += new System.EventHandler(this.btnNaoClica_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.radioButton2);
+            this.groupBox3.Controls.Add(this.radioButton1);
+            this.groupBox3.Controls.Add(this.btnLeituraRapida);
+            this.groupBox3.Location = new System.Drawing.Point(43, 164);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(200, 100);
+            this.groupBox3.TabIndex = 9;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Leitura Extrena";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
+            this.radioButton2.Location = new System.Drawing.Point(103, 21);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(45, 17);
+            this.radioButton2.TabIndex = 28;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "OFF";
+            this.radioButton2.UseMnemonic = false;
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Enabled = false;
+            this.radioButton1.Location = new System.Drawing.Point(45, 21);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(41, 17);
+            this.radioButton1.TabIndex = 27;
+            this.radioButton1.Text = "ON";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // btnLeituraRapida
+            // 
+            this.btnLeituraRapida.Enabled = false;
+            this.btnLeituraRapida.Location = new System.Drawing.Point(45, 56);
+            this.btnLeituraRapida.Name = "btnLeituraRapida";
+            this.btnLeituraRapida.Size = new System.Drawing.Size(118, 23);
+            this.btnLeituraRapida.TabIndex = 26;
+            this.btnLeituraRapida.Text = "Leitura Rápida";
+            this.btnLeituraRapida.UseVisualStyleBackColor = true;
+            this.btnLeituraRapida.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::InterfacePC.Properties.Resources._130938339377;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(800, 291);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnNaoClica);
             this.Controls.Add(this.btnAuto);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtBoxSerialRx);
-            this.Controls.Add(this.groupBoxControleMotor);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtBoxRRecebida);
             this.Controls.Add(this.groupBox1);
@@ -372,12 +364,11 @@
             this.Text = "UI de seleção";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Form1_Shown);
-            this.groupBoxControleMotor.ResumeLayout(false);
-            this.groupBoxControleMotor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericVelocidade)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -387,10 +378,6 @@
 
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtBoxSerialRx;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton rBtnAntiHorario;
-        private System.Windows.Forms.RadioButton rBtnHorario;
-        private System.Windows.Forms.GroupBox groupBoxControleMotor;
         private System.IO.Ports.SerialPort SerialPort;
         private System.Windows.Forms.Timer timerCOM;
         private System.Windows.Forms.Label label3;
@@ -409,9 +396,12 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnDesconectar;
         private System.Windows.Forms.Button btnLimpar;
-        private System.Windows.Forms.NumericUpDown numericVelocidade;
         private System.Windows.Forms.Button btnAuto;
         private System.Windows.Forms.Button btnNaoClica;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btnLeituraRapida;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
 
