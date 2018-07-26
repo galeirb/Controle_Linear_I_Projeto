@@ -1,0 +1,26 @@
+C:\Users\galei\source\repos\ControleLinearI\InterfacePC\InterfacePC\bin\Debug\InterfacePC.exe.config
+C:\Users\galei\source\repos\ControleLinearI\InterfacePC\InterfacePC\bin\Debug\InterfacePC.exe
+C:\Users\galei\source\repos\ControleLinearI\InterfacePC\InterfacePC\bin\Debug\InterfacePC.pdb
+C:\Users\galei\source\repos\ControleLinearI\InterfacePC\InterfacePC\obj\Debug\InterfacePC.csprojAssemblyReference.cache
+C:\Users\galei\source\repos\ControleLinearI\InterfacePC\InterfacePC\obj\Debug\InterfacePC.Form1.resources
+C:\Users\galei\source\repos\ControleLinearI\InterfacePC\InterfacePC\obj\Debug\InterfacePC.Properties.Resources.resources
+C:\Users\galei\source\repos\ControleLinearI\InterfacePC\InterfacePC\obj\Debug\InterfacePC.csproj.GenerateResource.cache
+C:\Users\galei\source\repos\ControleLinearI\InterfacePC\InterfacePC\obj\Debug\InterfacePC.csproj.CoreCompileInputs.cache
+C:\Users\galei\source\repos\ControleLinearI\InterfacePC\InterfacePC\obj\Debug\InterfacePC.exe
+C:\Users\galei\source\repos\ControleLinearI\InterfacePC\InterfacePC\obj\Debug\InterfacePC.pdb
+C:\Users\galei\Source\Repos\ControleLinearI\InterfacePC\InterfacePC\obj\Debug\InterfacePC.Doggos.resources
+C:\Users\galei\Source\Repos\ControleLinearI\InterfacePC\InterfacePC\obj\Debug\InterfacePC.wallpaper.resources
+C:\Users\galei\Source\Repos\ControleLinearI\InterfacePC\InterfacePC\obj\Debug\InterfacePC.Working.resources
+E:\Usuários\galeirb\Desktop\Nova pasta\antigo\ControleLinearI\InterfacePC\InterfacePC\bin\Debug\InterfacePC.exe.config
+E:\Usuários\galeirb\Desktop\Nova pasta\antigo\ControleLinearI\InterfacePC\InterfacePC\bin\Debug\InterfacePC.exe
+E:\Usuários\galeirb\Desktop\Nova pasta\antigo\ControleLinearI\InterfacePC\InterfacePC\obj\Debug\InterfacePC.csprojAssemblyReference.cache
+E:\Usuários\galeirb\Desktop\Nova pasta\antigo\ControleLinearI\InterfacePC\InterfacePC\obj\Debug\InterfacePC.Doggos.resources
+E:\Usuários\galeirb\Desktop\Nova pasta\antigo\ControleLinearI\InterfacePC\InterfacePC\obj\Debug\InterfacePC.Form1.resources
+E:\Usuários\galeirb\Desktop\Nova pasta\antigo\ControleLinearI\InterfacePC\InterfacePC\obj\Debug\InterfacePC.Properties.Resources.resources
+E:\Usuários\galeirb\Desktop\Nova pasta\antigo\ControleLinearI\InterfacePC\InterfacePC\obj\Debug\InterfacePC.wallpaper.resources
+E:\Usuários\galeirb\Desktop\Nova pasta\antigo\ControleLinearI\InterfacePC\InterfacePC\obj\Debug\InterfacePC.Working.resources
+E:\Usuários\galeirb\Desktop\Nova pasta\antigo\ControleLinearI\InterfacePC\InterfacePC\obj\Debug\InterfacePC.csproj.GenerateResource.cache
+E:\Usuários\galeirb\Desktop\Nova pasta\antigo\ControleLinearI\InterfacePC\InterfacePC\obj\Debug\InterfacePC.csproj.CoreCompileInputs.cache
+E:\Usuários\galeirb\Desktop\Nova pasta\antigo\ControleLinearI\InterfacePC\InterfacePC\obj\Debug\InterfacePC.exe
+E:\Usuários\galeirb\Desktop\Nova pasta\antigo\ControleLinearI\InterfacePC\InterfacePC\obj\Debug\InterfacePC.pdb
+E:\Usuários\galeirb\Desktop\Nova pasta\antigo\ControleLinearI\InterfacePC\InterfacePC\bin\Debug\InterfacePC.pdb
