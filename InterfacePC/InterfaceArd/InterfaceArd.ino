@@ -1,4 +1,4 @@
-#include <Wire.h> // Protocolo I2C
+//#include <Wire.h> // Protocolo I2C
 
 // instrucao_rx = Diferencia quais sãos os valores (valor1, valor2 e valor3)
 // valor1_str,valor2_str e valor3_str = Valores das resistências requeridas
