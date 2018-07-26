@@ -45,11 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Doggos.cs">
+    <Compile Include="Sobre.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Doggos.Designer.cs">
-      <DependentUpon>Doggos.cs</DependentUpon>
+    <Compile Include="Sobre.Designer.cs">
+      <DependentUpon>Sobre.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -71,8 +71,8 @@
     <Compile Include="Working.Designer.cs">
       <DependentUpon>Working.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Doggos.resx">
-      <DependentUpon>Doggos.cs</DependentUpon>
+    <EmbeddedResource Include="Sobre.resx">
+      <DependentUpon>Sobre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -123,6 +123,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\giphy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carregando.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carregando2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading-gif-transparent-10.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

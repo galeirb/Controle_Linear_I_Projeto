@@ -336,13 +336,13 @@
             // 
             // btnNaoClica
             // 
-            this.btnNaoClica.BackColor = System.Drawing.Color.Red;
-            this.btnNaoClica.Cursor = System.Windows.Forms.Cursors.No;
+            this.btnNaoClica.BackColor = System.Drawing.Color.White;
+            this.btnNaoClica.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNaoClica.Location = new System.Drawing.Point(363, 251);
             this.btnNaoClica.Name = "btnNaoClica";
             this.btnNaoClica.Size = new System.Drawing.Size(97, 38);
             this.btnNaoClica.TabIndex = 20;
-            this.btnNaoClica.Text = "NÃO CLICA";
+            this.btnNaoClica.Text = "Sobre";
             this.btnNaoClica.UseVisualStyleBackColor = false;
             this.btnNaoClica.Click += new System.EventHandler(this.btnNaoClica_Click);
             // 

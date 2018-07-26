@@ -188,6 +188,7 @@ namespace InterfacePC
                 {
                     SerialPort.PortName = cBoxCOMs.Items[cBoxCOMs.SelectedIndex].ToString();
                     SerialPort.Open();
+                    // Mandar instrução para aparecer no display que está conectado
                 }
                 catch
                 {
@@ -249,6 +250,8 @@ namespace InterfacePC
             btnDesconectar.Enabled = false;
             cBoxCOMs.Enabled = true;
             btnConectar.Enabled = true;
+
+            // Mandar uma instrução para limpar a tela LCD
             SerialPort.Close();
 
         }
@@ -258,11 +261,13 @@ namespace InterfacePC
             try
             {
                 new Working().Show();
+     
+                calculaValores(); // Pega os dados inseridos e coloca-se os pesos
+                string send1 = String.Format(Convert.ToString(valor1)); // Manda o valor 1
+                string send2 = String.Format(Convert.ToString(valor2)); // Manda o valor 2
+                string send3 = String.Format(Convert.ToString(valor3)); // Manda o valor 3
 
-                calculaValores();
-                string send1 = String.Format(Convert.ToString(valor1));
-                string send2 = String.Format(Convert.ToString(valor2));
-                string send3 = String.Format(Convert.ToString(valor3));
+                // Valores recebidos do Arduino (Confirmação)
                 SerialPort.Write("receberv1,");
                 SerialPort.Write(send1);
 
@@ -279,10 +284,15 @@ namespace InterfacePC
                 await Task.Delay(1500);
 
                 //ativarMotor();
+
+                // Adicionar um código que faça sumir a janela de carregamento
             }
             catch
             {
+                // Adicionar um código que faça sumir a janela de carregamento
+
                 DialogResult res = MessageBox.Show("Tem erro aê meu parsero...", "Ih rapaz...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
             }
         }
 
@@ -305,16 +315,16 @@ namespace InterfacePC
 
         private void btnNaoClica_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("YOU HAVE CHURAS??", "ARE YOU SURE???", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+            //DialogResult res = MessageBox.Show("YOU HAVE CHURAS??", "ARE YOU SURE???", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
 
-            if (res == DialogResult.Yes)
-            {
-                new Doggos().Show();
-            }
-            if (res == DialogResult.No)
-            {
-                DialogResult LEL = MessageBox.Show("Fez bem, otário", "MEDROSÃO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            //if (res == DialogResult.Yes)
+           // {
+                new Sobre().Show();
+           // }
+           // if (res == DialogResult.No)
+           // {
+           //     DialogResult LEL = MessageBox.Show("Fez bem, otário", "MEDROSÃO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+           // }
         }
 
         private void txtBoxRRecebida_TextChanged(object sender, EventArgs e)

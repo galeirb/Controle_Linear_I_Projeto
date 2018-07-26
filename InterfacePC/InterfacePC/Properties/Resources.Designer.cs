@@ -83,6 +83,26 @@ namespace InterfacePC.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap carregando {
+            get {
+                object obj = ResourceManager.GetObject("carregando", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap carregando2 {
+            get {
+                object obj = ResourceManager.GetObject("carregando2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap download {
             get {
                 object obj = ResourceManager.GetObject("download", resourceCulture);
@@ -96,6 +116,16 @@ namespace InterfacePC.Properties {
         internal static System.Drawing.Bitmap giphy {
             get {
                 object obj = ResourceManager.GetObject("giphy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loading_gif_transparent_10 {
+            get {
+                object obj = ResourceManager.GetObject("loading-gif-transparent-10", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

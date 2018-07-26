@@ -34,21 +34,23 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::InterfacePC.Properties.Resources.giphy;
-            this.pictureBox1.Location = new System.Drawing.Point(-2, 1);
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.pictureBox1.Image = global::InterfacePC.Properties.Resources.loading_gif_transparent_10;
+            this.pictureBox1.Location = new System.Drawing.Point(64, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(518, 298);
+            this.pictureBox1.Size = new System.Drawing.Size(293, 254);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Working
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 274);
+            this.ClientSize = new System.Drawing.Size(411, 265);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Working";
-            this.Text = "Working";
+            this.Text = "Processando";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
