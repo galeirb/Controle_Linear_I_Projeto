@@ -1,24 +1,22 @@
-  
-// Programa : Arduino Motor Shield - Controle motores DC
-// Autor : Arduino e Cia
- 
 // Carrega a biblioteca AFMotor
 #include <AFMotor.h>
 
 // Define o motor1 ligado a conexao 1
 AF_DCMotor motor1(1); 
 
+
+// Opção de trabalho
+int opcao = 1;
+
 // Botão
 const int botao = 40; //Botão para acionar o motor na opção 0
 const int led_on = 35;
 const int led_off = 37;
 
-// Opção de trabalho
-int opcao = 0;
 
 /*
  *  0 - Controlar a rotaçao do motor, sendo acionado com o botão, 
- *  1 - Controle do Servo motor
+ *  1 - Teste como o reed switch
  * 
  * 
  */
@@ -34,6 +32,15 @@ void setup()
   pinMode(led_on,OUTPUT);
   pinMode(led_off,OUTPUT);
   //Serial.begin(9600); 
+
+  // Para o reed switch
+  #if (opcao == 1)
+    //pinMode(led_on, OUTPUT); // Configura o pino 13 (led interno) como saída;
+    //pinMode(50, INPUT_PULLUP); // Configura pino 8 como entrada e habilita pull up interno;
+    pinMode(50, INPUT);
+
+   #endif
+  
 
 }
  
@@ -79,6 +86,14 @@ void loop()
     
     }
   
-
+    if (opcao == 1){
+       if (digitalRead(50) == HIGH) { // Botão Pressionado;
+          digitalWrite(led_on, HIGH); // Liga led.
+      }
+      else { // Botão Não Pressionado
+          digitalWrite(led_on, LOW); // Desliga led.
+      }
+      
+    }
   
 }
