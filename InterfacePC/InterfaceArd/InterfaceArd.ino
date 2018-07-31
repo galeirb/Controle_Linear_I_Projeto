@@ -1,8 +1,9 @@
-#include <Wire.h> // Protocolo I2C
+//#include <Wire.h> // Protocolo I2C
 
 #include <LiquidCrystal.h>
 
-LiquidCrystal lcd(12,11,3,4,5,6);
+LiquidCrystal lcd(41,43,35,34,24,22);
+//lcd(RS,E,x,x,x,x);
 
 // Portas utilizada no I2C
 //4 (SDA) e 5(SCL) - Nano
@@ -18,19 +19,20 @@ int qtd1,qtd2,qtd3; //velocidade
 float r1, r2, r3;
 
 
-const int analogPin = A1; // Porta analogica para leitura
-const int pin_qtd = 5; // Quantidade de resistores de referência utilizado + 1
+const int analogPin = A3; // Porta analogica para leitura
+const int pin_qtd = 7; // Quantidade de resistores de referência utilizado + 1
 const int qtd_amostra = 20; // Quantidade de leituras que serão feitas para cada resistor
 
-const int pin[pin_qtd] = { 2, 7, 8, 9, 10 }; // Onde os resistores de referência estão conectado
+const int pin[pin_qtd] = { 52, 44, 42, 40, 38, 36, 30 }; // Onde os resistores de referência estão conectado
 //const float res_referencia[pin_qtd] = { 62.0, 221.0, 9780.0, 4620.0, 327.0 };
-const float res_referencia[pin_qtd] = { 323.0, 61.3, 987.0, 4580.0, 218.0 }; // Os valores dos resistores de referência
+const float res_referencia[pin_qtd] = { 326.0,9850.0, 62.3, 4595.0, 222.0, 998.0,466.1 }; // Os valores dos resistores de referência
+//const float res_referencia[pin_qtd] = { 466.1 ,998.0, 222.0, 4595.0,  62.3, 9850.0,326.0}; // Os valores dos resistores de referência
 float ref; // Variável para guardar o valor de referência utilizado.
 
 
 void setup() {
 	Serial.begin(9600);
-	Wire.begin(8); //Nano - 8
+	//Wire.begin(8); //Nano - 8
 	//pinMode(13, OUTPUT);
   lcd.begin(16,2); // Quantidade de colunas e linhas
 

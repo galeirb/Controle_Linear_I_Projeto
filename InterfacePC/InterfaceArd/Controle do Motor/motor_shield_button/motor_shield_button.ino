@@ -2,14 +2,14 @@
 #include <AFMotor.h>
 
 // Define o motor1 ligado a conexao 1
-AF_DCMotor motor1(1); 
+AF_DCMotor motor1(3); 
 
 
 // Opção de trabalho
-int opcao = 1;
+int opcao = 0;
 
 // Botão
-const int botao = 40; //Botão para acionar o motor na opção 0
+const int botao = 34; //Botão para acionar o motor na opção 0
 const int led_on = 35;
 const int led_off = 37;
 
