@@ -37,16 +37,3 @@ E:\Usuários\galeirb\OneDrive\1 - UFAC\Engenharia Eletrica\6º Período\Controle
 E:\Usuários\galeirb\OneDrive\1 - UFAC\Engenharia Eletrica\6º Período\Controle Linear I\Projeto\Código_Final\InterfacePC\InterfacePC\obj\Debug\InterfacePC.exe
 E:\Usuários\galeirb\OneDrive\1 - UFAC\Engenharia Eletrica\6º Período\Controle Linear I\Projeto\Código_Final\InterfacePC\InterfacePC\obj\Debug\InterfacePC.pdb
 E:\Usuários\galeirb\OneDrive\1 - UFAC\Engenharia Eletrica\6º Período\Controle Linear I\Projeto\Código_Final\InterfacePC\InterfacePC\obj\Debug\InterfacePC.Sobre.resources
-C:\Users\Rebouças\Documents\GitHub\Controle_Linear_I_Projeto\InterfacePC\InterfacePC\bin\Debug\InterfacePC.exe.config
-C:\Users\Rebouças\Documents\GitHub\Controle_Linear_I_Projeto\InterfacePC\InterfacePC\bin\Debug\InterfacePC.exe
-C:\Users\Rebouças\Documents\GitHub\Controle_Linear_I_Projeto\InterfacePC\InterfacePC\bin\Debug\InterfacePC.pdb
-C:\Users\Rebouças\Documents\GitHub\Controle_Linear_I_Projeto\InterfacePC\InterfacePC\obj\Debug\InterfacePC.csprojAssemblyReference.cache
-C:\Users\Rebouças\Documents\GitHub\Controle_Linear_I_Projeto\InterfacePC\InterfacePC\obj\Debug\InterfacePC.Sobre.resources
-C:\Users\Rebouças\Documents\GitHub\Controle_Linear_I_Projeto\InterfacePC\InterfacePC\obj\Debug\InterfacePC.Form1.resources
-C:\Users\Rebouças\Documents\GitHub\Controle_Linear_I_Projeto\InterfacePC\InterfacePC\obj\Debug\InterfacePC.Properties.Resources.resources
-C:\Users\Rebouças\Documents\GitHub\Controle_Linear_I_Projeto\InterfacePC\InterfacePC\obj\Debug\InterfacePC.wallpaper.resources
-C:\Users\Rebouças\Documents\GitHub\Controle_Linear_I_Projeto\InterfacePC\InterfacePC\obj\Debug\InterfacePC.Working.resources
-C:\Users\Rebouças\Documents\GitHub\Controle_Linear_I_Projeto\InterfacePC\InterfacePC\obj\Debug\InterfacePC.csproj.GenerateResource.cache
-C:\Users\Rebouças\Documents\GitHub\Controle_Linear_I_Projeto\InterfacePC\InterfacePC\obj\Debug\InterfacePC.csproj.CoreCompileInputs.cache
-C:\Users\Rebouças\Documents\GitHub\Controle_Linear_I_Projeto\InterfacePC\InterfacePC\obj\Debug\InterfacePC.exe
-C:\Users\Rebouças\Documents\GitHub\Controle_Linear_I_Projeto\InterfacePC\InterfacePC\obj\Debug\InterfacePC.pdb
