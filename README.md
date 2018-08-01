@@ -1,1 +1,1 @@
-# Controle_Linear_I_Projeto
+# Projeto -> "Seletor Automatizado de Resistores"
