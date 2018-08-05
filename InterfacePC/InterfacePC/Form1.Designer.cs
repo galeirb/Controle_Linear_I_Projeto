@@ -38,10 +38,6 @@
             this.btnConectar = new System.Windows.Forms.Button();
             this.cBoxCOMs = new System.Windows.Forms.ComboBox();
             this.txtBoxRRecebida = new System.Windows.Forms.TextBox();
-            this.cBoxPeso3 = new System.Windows.Forms.ComboBox();
-            this.txtBoxValor3 = new System.Windows.Forms.TextBox();
-            this.cBoxPeso2 = new System.Windows.Forms.ComboBox();
-            this.txtBoxValor2 = new System.Windows.Forms.TextBox();
             this.cBoxPeso1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -131,49 +127,6 @@
             this.txtBoxRRecebida.TabIndex = 15;
             this.txtBoxRRecebida.TextChanged += new System.EventHandler(this.txtBoxRRecebida_TextChanged);
             // 
-            // cBoxPeso3
-            // 
-            this.cBoxPeso3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cBoxPeso3.FormattingEnabled = true;
-            this.cBoxPeso3.Items.AddRange(new object[] {
-            "Ω",
-            "kΩ",
-            "MΩ"});
-            this.cBoxPeso3.Location = new System.Drawing.Point(208, 71);
-            this.cBoxPeso3.Name = "cBoxPeso3";
-            this.cBoxPeso3.Size = new System.Drawing.Size(47, 21);
-            this.cBoxPeso3.TabIndex = 8;
-            // 
-            // txtBoxValor3
-            // 
-            this.txtBoxValor3.Location = new System.Drawing.Point(154, 71);
-            this.txtBoxValor3.MaxLength = 5;
-            this.txtBoxValor3.Name = "txtBoxValor3";
-            this.txtBoxValor3.Size = new System.Drawing.Size(48, 20);
-            this.txtBoxValor3.TabIndex = 7;
-            // 
-            // cBoxPeso2
-            // 
-            this.cBoxPeso2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cBoxPeso2.FormattingEnabled = true;
-            this.cBoxPeso2.Items.AddRange(new object[] {
-            "Ω",
-            "kΩ",
-            "MΩ"});
-            this.cBoxPeso2.Location = new System.Drawing.Point(208, 44);
-            this.cBoxPeso2.Name = "cBoxPeso2";
-            this.cBoxPeso2.Size = new System.Drawing.Size(47, 21);
-            this.cBoxPeso2.TabIndex = 6;
-            this.cBoxPeso2.SelectedIndexChanged += new System.EventHandler(this.cBoxPeso2_SelectedIndexChanged);
-            // 
-            // txtBoxValor2
-            // 
-            this.txtBoxValor2.Location = new System.Drawing.Point(154, 44);
-            this.txtBoxValor2.MaxLength = 5;
-            this.txtBoxValor2.Name = "txtBoxValor2";
-            this.txtBoxValor2.Size = new System.Drawing.Size(48, 20);
-            this.txtBoxValor2.TabIndex = 5;
-            // 
             // cBoxPeso1
             // 
             this.cBoxPeso1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -182,7 +135,7 @@
             "Ω",
             "kΩ",
             "MΩ"});
-            this.cBoxPeso1.Location = new System.Drawing.Point(208, 17);
+            this.cBoxPeso1.Location = new System.Drawing.Point(93, 52);
             this.cBoxPeso1.Name = "cBoxPeso1";
             this.cBoxPeso1.Size = new System.Drawing.Size(47, 21);
             this.cBoxPeso1.TabIndex = 4;
@@ -190,35 +143,32 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cBoxPeso3);
-            this.groupBox1.Controls.Add(this.txtBoxValor3);
-            this.groupBox1.Controls.Add(this.cBoxPeso2);
-            this.groupBox1.Controls.Add(this.txtBoxValor2);
             this.groupBox1.Controls.Add(this.cBoxPeso1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtBoxValor1);
-            this.groupBox1.Location = new System.Drawing.Point(22, 20);
+            this.groupBox1.Location = new System.Drawing.Point(61, 38);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(271, 108);
+            this.groupBox1.Size = new System.Drawing.Size(169, 90);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Seleção de resistores";
+            this.groupBox1.Text = "Seleção do resistor";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 48);
+            this.label1.Location = new System.Drawing.Point(29, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 13);
+            this.label1.Size = new System.Drawing.Size(111, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Resistências desejadas:";
+            this.label1.Text = "Resistência desejada:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtBoxValor1
             // 
-            this.txtBoxValor1.Location = new System.Drawing.Point(154, 17);
+            this.txtBoxValor1.Location = new System.Drawing.Point(21, 53);
             this.txtBoxValor1.MaxLength = 5;
             this.txtBoxValor1.Name = "txtBoxValor1";
-            this.txtBoxValor1.Size = new System.Drawing.Size(48, 20);
+            this.txtBoxValor1.Size = new System.Drawing.Size(54, 20);
             this.txtBoxValor1.TabIndex = 0;
             this.txtBoxValor1.TextChanged += new System.EventHandler(this.txtBoxValor1_TextChanged);
             // 
@@ -385,10 +335,6 @@
         private System.Windows.Forms.Button btnConectar;
         private System.Windows.Forms.ComboBox cBoxCOMs;
         private System.Windows.Forms.TextBox txtBoxRRecebida;
-        private System.Windows.Forms.ComboBox cBoxPeso3;
-        private System.Windows.Forms.TextBox txtBoxValor3;
-        private System.Windows.Forms.ComboBox cBoxPeso2;
-        private System.Windows.Forms.TextBox txtBoxValor2;
         private System.Windows.Forms.ComboBox cBoxPeso1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;

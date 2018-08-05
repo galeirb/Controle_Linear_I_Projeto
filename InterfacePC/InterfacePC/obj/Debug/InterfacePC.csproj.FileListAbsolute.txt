@@ -50,3 +50,16 @@ C:\Users\Rebouças\Documents\GitHub\Controle_Linear_I_Projeto\InterfacePC\Interf
 C:\Users\Rebouças\Documents\GitHub\Controle_Linear_I_Projeto\InterfacePC\InterfacePC\obj\Debug\InterfacePC.csproj.CoreCompileInputs.cache
 C:\Users\Rebouças\Documents\GitHub\Controle_Linear_I_Projeto\InterfacePC\InterfacePC\obj\Debug\InterfacePC.exe
 C:\Users\Rebouças\Documents\GitHub\Controle_Linear_I_Projeto\InterfacePC\InterfacePC\obj\Debug\InterfacePC.pdb
+E:\Usuários\galeirb\OneDrive\1 - UFAC\Engenharia Eletrica\6º Período\Controle Linear I\Projeto\Código_Atualizado\Seletor_Automatizado_de_Resistores\InterfacePC\InterfacePC\bin\Debug\InterfacePC.exe.config
+E:\Usuários\galeirb\OneDrive\1 - UFAC\Engenharia Eletrica\6º Período\Controle Linear I\Projeto\Código_Atualizado\Seletor_Automatizado_de_Resistores\InterfacePC\InterfacePC\bin\Debug\InterfacePC.exe
+E:\Usuários\galeirb\OneDrive\1 - UFAC\Engenharia Eletrica\6º Período\Controle Linear I\Projeto\Código_Atualizado\Seletor_Automatizado_de_Resistores\InterfacePC\InterfacePC\bin\Debug\InterfacePC.pdb
+E:\Usuários\galeirb\OneDrive\1 - UFAC\Engenharia Eletrica\6º Período\Controle Linear I\Projeto\Código_Atualizado\Seletor_Automatizado_de_Resistores\InterfacePC\InterfacePC\obj\Debug\InterfacePC.csprojAssemblyReference.cache
+E:\Usuários\galeirb\OneDrive\1 - UFAC\Engenharia Eletrica\6º Período\Controle Linear I\Projeto\Código_Atualizado\Seletor_Automatizado_de_Resistores\InterfacePC\InterfacePC\obj\Debug\InterfacePC.Sobre.resources
+E:\Usuários\galeirb\OneDrive\1 - UFAC\Engenharia Eletrica\6º Período\Controle Linear I\Projeto\Código_Atualizado\Seletor_Automatizado_de_Resistores\InterfacePC\InterfacePC\obj\Debug\InterfacePC.Form1.resources
+E:\Usuários\galeirb\OneDrive\1 - UFAC\Engenharia Eletrica\6º Período\Controle Linear I\Projeto\Código_Atualizado\Seletor_Automatizado_de_Resistores\InterfacePC\InterfacePC\obj\Debug\InterfacePC.Properties.Resources.resources
+E:\Usuários\galeirb\OneDrive\1 - UFAC\Engenharia Eletrica\6º Período\Controle Linear I\Projeto\Código_Atualizado\Seletor_Automatizado_de_Resistores\InterfacePC\InterfacePC\obj\Debug\InterfacePC.wallpaper.resources
+E:\Usuários\galeirb\OneDrive\1 - UFAC\Engenharia Eletrica\6º Período\Controle Linear I\Projeto\Código_Atualizado\Seletor_Automatizado_de_Resistores\InterfacePC\InterfacePC\obj\Debug\InterfacePC.Working.resources
+E:\Usuários\galeirb\OneDrive\1 - UFAC\Engenharia Eletrica\6º Período\Controle Linear I\Projeto\Código_Atualizado\Seletor_Automatizado_de_Resistores\InterfacePC\InterfacePC\obj\Debug\InterfacePC.csproj.GenerateResource.cache
+E:\Usuários\galeirb\OneDrive\1 - UFAC\Engenharia Eletrica\6º Período\Controle Linear I\Projeto\Código_Atualizado\Seletor_Automatizado_de_Resistores\InterfacePC\InterfacePC\obj\Debug\InterfacePC.csproj.CoreCompileInputs.cache
+E:\Usuários\galeirb\OneDrive\1 - UFAC\Engenharia Eletrica\6º Período\Controle Linear I\Projeto\Código_Atualizado\Seletor_Automatizado_de_Resistores\InterfacePC\InterfacePC\obj\Debug\InterfacePC.exe
+E:\Usuários\galeirb\OneDrive\1 - UFAC\Engenharia Eletrica\6º Período\Controle Linear I\Projeto\Código_Atualizado\Seletor_Automatizado_de_Resistores\InterfacePC\InterfacePC\obj\Debug\InterfacePC.pdb

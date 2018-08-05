@@ -128,6 +128,7 @@ namespace InterfacePC
                     }
                 }
 
+                /*
                 if (txtBoxValor2.Text != "")
                 {
                     switch (cBoxPeso2.SelectedIndex)
@@ -144,7 +145,9 @@ namespace InterfacePC
 
                     }
                 }
+                */
 
+                /*
                 if (txtBoxValor3.Text != "")
                 {
                     switch (cBoxPeso3.SelectedIndex)
@@ -160,9 +163,9 @@ namespace InterfacePC
                             break;
 
                     }
-                }
+                }*/
 
-                    
+
             }
             catch
             {
@@ -205,10 +208,12 @@ namespace InterfacePC
                     SerialPort.Open();
                     txtBoxSerialRx.Text = "Arduino Conectado!";
                     // Mandar instrução para aparecer no display que está conectado
+                    SerialPort.Write("status_arduino,1");
                 }
                 catch
                 {
                     return;
+
 
                 }
                 if (SerialPort.IsOpen)
@@ -247,7 +252,7 @@ namespace InterfacePC
 
         private void btnDesconectar_Click(object sender, EventArgs e)
         {
-            
+            SerialPort.Write("status_arduino,0");
             btnConectar.Enabled = true;
             btnDesconectar.Enabled = false;
             btnLeituraRapida.Enabled = false; // Botão de leitura rápida
@@ -255,18 +260,21 @@ namespace InterfacePC
             radioButton1.Enabled = false; // Mantém o botão desativado
             cBoxCOMs.Enabled = true;
             txtBoxSerialRx.Text = "Arduino Desconectado!";
+
+            
+
             SerialPort.Close();
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
             txtBoxValor1.Text = "";
-            txtBoxValor2.Text = "";
-            txtBoxValor3.Text = "";
+            //txtBoxValor2.Text = "";
+            //txtBoxValor3.Text = "";
             cBoxCOMs.SelectedIndex = -1;
             cBoxPeso1.SelectedIndex = 0;
-            cBoxPeso2.SelectedIndex = 0;
-            cBoxPeso3.SelectedIndex = 0;
+            //cBoxPeso2.SelectedIndex = 0;
+            //cBoxPeso3.SelectedIndex = 0;
             txtBoxRRecebida.Text = "";
             txtBoxSerialRx.Text = "";
             btnDesconectar.Enabled = false;
@@ -292,27 +300,28 @@ namespace InterfacePC
 
 
                 string send1 = String.Format(Convert.ToString(valor1)); // Manda o valor 1
-                string send2 = String.Format(Convert.ToString(valor2)); // Manda o valor 2
-                string send3 = String.Format(Convert.ToString(valor3)); // Manda o valor 3
+                //string send2 = String.Format(Convert.ToString(valor2)); // Manda o valor 2
+               // string send3 = String.Format(Convert.ToString(valor3)); // Manda o valor 3
                                
 
                 // Valores recebidos do Arduino (Confirmação)
                 SerialPort.Write("receberv1,");
                 SerialPort.Write(send1);
 
-                await Task.Delay(2000);
-
-                SerialPort.Write("receberv2,");
-                SerialPort.Write(send2);
 
                 await Task.Delay(2000);
 
-                SerialPort.Write("receberv3,");
-                SerialPort.Write(send3);
+                //SerialPort.Write("receberv2,");
+                //SerialPort.Write(send2);
 
-                await Task.Delay(1500);
+                //await Task.Delay(2000);
 
-                txtBoxSerialRx.Text = "Valores enviados para o Arduino!";
+                // SerialPort.Write("receberv3,");
+                //SerialPort.Write(send3);
+
+                // await Task.Delay(1500);
+
+                txtBoxSerialRx.Text = "Valor enviado para o Arduino!";
 
                 //ativarMotor();
 
@@ -384,8 +393,8 @@ namespace InterfacePC
         private void Form1_Shown(object sender, EventArgs e)
         {
             cBoxPeso1.SelectedIndex = 0;
-            cBoxPeso2.SelectedIndex = 0;
-            cBoxPeso3.SelectedIndex = 0;
+            //cBoxPeso2.SelectedIndex = 0;
+            //cBoxPeso3.SelectedIndex = 0;
             txtBoxSerialRx.Text = "Bem vindo! Conecte ao arduiuno!";
 
         }
@@ -408,12 +417,12 @@ namespace InterfacePC
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
             txtBoxValor1.Text = "";
-            txtBoxValor2.Text = "";
-            txtBoxValor3.Text = "";
+            //txtBoxValor2.Text = "";
+            //txtBoxValor3.Text = "";
             //cBoxCOMs.SelectedIndex = -1;
             cBoxPeso1.SelectedIndex = 0;
-            cBoxPeso2.SelectedIndex = 0;
-            cBoxPeso3.SelectedIndex = 0;
+            //cBoxPeso2.SelectedIndex = 0;
+            //cBoxPeso3.SelectedIndex = 0;
             txtBoxRRecebida.Text = ""; // Resistências lidas
             txtBoxSerialRx.Text = "Habilitado a opção de leitura externa!";
             btnLeituraRapida.Enabled = true;
@@ -447,11 +456,11 @@ namespace InterfacePC
         private void btnAuto_Click(object sender, EventArgs e)
         {
             txtBoxValor1.Text = "220";
-            txtBoxValor2.Text = "1";
-            txtBoxValor3.Text = "1.5";
+            //txtBoxValor2.Text = "1";
+            //txtBoxValor3.Text = "1.5";
             cBoxPeso1.SelectedIndex = 0;
-            cBoxPeso2.SelectedIndex = 1;
-            cBoxPeso3.SelectedIndex = 2;
+            //cBoxPeso2.SelectedIndex = 1;
+            //cBoxPeso3.SelectedIndex = 2;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -474,6 +483,11 @@ namespace InterfacePC
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             SerialPort.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void SerialPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
