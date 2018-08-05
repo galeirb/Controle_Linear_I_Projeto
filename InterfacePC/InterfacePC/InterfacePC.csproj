@@ -133,5 +133,8 @@
   <ItemGroup>
     <None Include="Resources\loading-gif-transparent-10.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tela de execução.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -60,7 +60,9 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(519, 251);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label4.Location = new System.Drawing.Point(499, 333);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 13);
             this.label4.TabIndex = 22;
@@ -68,7 +70,7 @@
             // 
             // txtBoxSerialRx
             // 
-            this.txtBoxSerialRx.Location = new System.Drawing.Point(322, 161);
+            this.txtBoxSerialRx.Location = new System.Drawing.Point(302, 243);
             this.txtBoxSerialRx.Multiline = true;
             this.txtBoxSerialRx.Name = "txtBoxSerialRx";
             this.txtBoxSerialRx.ReadOnly = true;
@@ -90,7 +92,9 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(619, 131);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.Location = new System.Drawing.Point(599, 213);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 21;
@@ -99,6 +103,7 @@
             // btnConectar
             // 
             this.btnConectar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnConectar.ForeColor = System.Drawing.SystemColors.Desktop;
             this.btnConectar.Location = new System.Drawing.Point(19, 46);
             this.btnConectar.Name = "btnConectar";
             this.btnConectar.Size = new System.Drawing.Size(75, 23);
@@ -119,7 +124,7 @@
             // 
             // txtBoxRRecebida
             // 
-            this.txtBoxRRecebida.Location = new System.Drawing.Point(550, 31);
+            this.txtBoxRRecebida.Location = new System.Drawing.Point(530, 113);
             this.txtBoxRRecebida.Multiline = true;
             this.txtBoxRRecebida.Name = "txtBoxRRecebida";
             this.txtBoxRRecebida.ReadOnly = true;
@@ -130,6 +135,7 @@
             // 
             // cBoxPeso1
             // 
+            this.cBoxPeso1.BackColor = System.Drawing.SystemColors.Window;
             this.cBoxPeso1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBoxPeso1.FormattingEnabled = true;
             this.cBoxPeso1.Items.AddRange(new object[] {
@@ -144,10 +150,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.cBoxPeso1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtBoxValor1);
-            this.groupBox1.Location = new System.Drawing.Point(61, 38);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox1.Location = new System.Drawing.Point(69, 109);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(169, 90);
             this.groupBox1.TabIndex = 14;
@@ -175,7 +183,7 @@
             // 
             // btnIniciar
             // 
-            this.btnIniciar.Location = new System.Drawing.Point(322, 116);
+            this.btnIniciar.Location = new System.Drawing.Point(302, 198);
             this.btnIniciar.Name = "btnIniciar";
             this.btnIniciar.Size = new System.Drawing.Size(100, 34);
             this.btnIniciar.TabIndex = 16;
@@ -185,10 +193,12 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.btnDesconectar);
             this.groupBox2.Controls.Add(this.cBoxCOMs);
             this.groupBox2.Controls.Add(this.btnConectar);
-            this.groupBox2.Location = new System.Drawing.Point(322, 27);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.Control;
+            this.groupBox2.Location = new System.Drawing.Point(302, 109);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 83);
             this.groupBox2.TabIndex = 23;
@@ -200,6 +210,7 @@
             // 
             this.btnDesconectar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnDesconectar.Enabled = false;
+            this.btnDesconectar.ForeColor = System.Drawing.SystemColors.Desktop;
             this.btnDesconectar.Location = new System.Drawing.Point(100, 46);
             this.btnDesconectar.Name = "btnDesconectar";
             this.btnDesconectar.Size = new System.Drawing.Size(81, 23);
@@ -211,7 +222,7 @@
             // btnLimpar
             // 
             this.btnLimpar.Enabled = false;
-            this.btnLimpar.Location = new System.Drawing.Point(447, 122);
+            this.btnLimpar.Location = new System.Drawing.Point(427, 204);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpar.TabIndex = 24;
@@ -221,7 +232,7 @@
             // 
             // btnAuto
             // 
-            this.btnAuto.Location = new System.Drawing.Point(711, 265);
+            this.btnAuto.Location = new System.Drawing.Point(120, 205);
             this.btnAuto.Name = "btnAuto";
             this.btnAuto.Size = new System.Drawing.Size(75, 23);
             this.btnAuto.TabIndex = 25;
@@ -233,9 +244,9 @@
             // 
             this.btnNaoClica.BackColor = System.Drawing.Color.White;
             this.btnNaoClica.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNaoClica.Location = new System.Drawing.Point(363, 251);
+            this.btnNaoClica.Location = new System.Drawing.Point(726, 358);
             this.btnNaoClica.Name = "btnNaoClica";
-            this.btnNaoClica.Size = new System.Drawing.Size(97, 38);
+            this.btnNaoClica.Size = new System.Drawing.Size(75, 26);
             this.btnNaoClica.TabIndex = 20;
             this.btnNaoClica.Text = "Sobre";
             this.btnNaoClica.UseVisualStyleBackColor = false;
@@ -243,10 +254,12 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.radioButton2);
             this.groupBox3.Controls.Add(this.radioButton1);
             this.groupBox3.Controls.Add(this.btnLeituraRapida);
-            this.groupBox3.Location = new System.Drawing.Point(43, 164);
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox3.Location = new System.Drawing.Point(53, 234);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(200, 100);
             this.groupBox3.TabIndex = 9;
@@ -283,6 +296,7 @@
             // btnLeituraRapida
             // 
             this.btnLeituraRapida.Enabled = false;
+            this.btnLeituraRapida.ForeColor = System.Drawing.SystemColors.Desktop;
             this.btnLeituraRapida.Location = new System.Drawing.Point(45, 56);
             this.btnLeituraRapida.Name = "btnLeituraRapida";
             this.btnLeituraRapida.Size = new System.Drawing.Size(118, 23);
@@ -296,7 +310,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(800, 291);
+            this.BackgroundImage = global::InterfacePC.Properties.Resources.Tela_de_execução;
+            this.ClientSize = new System.Drawing.Size(804, 387);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnNaoClica);
             this.Controls.Add(this.btnAuto);

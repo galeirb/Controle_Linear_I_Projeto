@@ -143,6 +143,16 @@ namespace InterfacePC.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Tela_de_execução {
+            get {
+                object obj = ResourceManager.GetObject("Tela de execução", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap wallpaperroggo_ {
             get {
                 object obj = ResourceManager.GetObject("wallpaperroggo]", resourceCulture);
