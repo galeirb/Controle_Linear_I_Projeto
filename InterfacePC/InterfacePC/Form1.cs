@@ -209,6 +209,8 @@ namespace InterfacePC
                     txtBoxSerialRx.Text = "Arduino Conectado!";
                     // Mandar instrução para aparecer no display que está conectado
                     SerialPort.Write("status_arduino,1");
+                    btnLimpar.Enabled = true; // Habilita o botão de limpar
+
                 }
                 catch
                 {
@@ -255,19 +257,23 @@ namespace InterfacePC
             SerialPort.Write("status_arduino,0");
             btnConectar.Enabled = true;
             btnDesconectar.Enabled = false;
+            btnLimpar.Enabled = false; // Desabilita o botão de limpar
             btnLeituraRapida.Enabled = false; // Botão de leitura rápida
             radioButton2.Checked = true; // Deixa apenas selecionado o OFF
             radioButton1.Enabled = false; // Mantém o botão desativado
             cBoxCOMs.Enabled = true;
             txtBoxSerialRx.Text = "Arduino Desconectado!";
 
-            
+
 
             SerialPort.Close();
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
+
+            SerialPort.Write("status_arduino,0"); // Avisa que o arduino foi desconectado
+            btnLimpar.Enabled = false; // Desabilita o botão de limpar
             txtBoxValor1.Text = "";
             //txtBoxValor2.Text = "";
             //txtBoxValor3.Text = "";
@@ -280,13 +286,15 @@ namespace InterfacePC
             btnDesconectar.Enabled = false;
             btnLeituraRapida.Enabled = false;
             radioButton1.Enabled = false; // Mantém o botão desativado
-            radioButton2.Checked = true;
             cBoxCOMs.Enabled = true;
             btnConectar.Enabled = true;
             txtBoxSerialRx.Text = "Arduino Desconectado!";
+            
 
             // Mandar uma instrução para limpar a tela LCD
             SerialPort.Close();
+            
+            radioButton2.Checked = true; // Deixa marcado o botão de off da leitura externa
 
         }
 
@@ -397,6 +405,9 @@ namespace InterfacePC
             //cBoxPeso3.SelectedIndex = 0;
             txtBoxSerialRx.Text = "Bem vindo! Conecte ao arduiuno!";
 
+            
+
+
         }
 
         private void groupBoxControleMotor_Enter(object sender, EventArgs e)
@@ -416,18 +427,21 @@ namespace InterfacePC
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-            txtBoxValor1.Text = "";
-            //txtBoxValor2.Text = "";
-            //txtBoxValor3.Text = "";
-            //cBoxCOMs.SelectedIndex = -1;
-            cBoxPeso1.SelectedIndex = 0;
-            //cBoxPeso2.SelectedIndex = 0;
-            //cBoxPeso3.SelectedIndex = 0;
-            txtBoxRRecebida.Text = ""; // Resistências lidas
-            txtBoxSerialRx.Text = "Habilitado a opção de leitura externa!";
-            btnLeituraRapida.Enabled = true;
+                   if (this.radioButton1.Checked == true)
+            {
+                SerialPort.Write("leitura,2"); // 2- Para ser mostrado tbm no display que está habilitado
+                txtBoxValor1.Text = "";
+                //txtBoxValor2.Text = "";
+                //txtBoxValor3.Text = "";
+                //cBoxCOMs.SelectedIndex = -1;
+                cBoxPeso1.SelectedIndex = 0;
+                //cBoxPeso2.SelectedIndex = 0;
+                //cBoxPeso3.SelectedIndex = 0;
+                txtBoxRRecebida.Text = ""; // Resistências lidas
+                txtBoxSerialRx.Text = "Habilitado a opção de leitura externa!";
 
-
+                btnLeituraRapida.Enabled = true;
+            }
 
 
             if (SerialPort.IsOpen == true)
@@ -472,11 +486,16 @@ namespace InterfacePC
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            //txtBoxRRecebida.Text = ""; // Resistências lidas
-            txtBoxSerialRx.Text = "Desabilitado a opção de leitura externa!";
-            btnLeituraRapida.Enabled = false;
+            if (this.radioButton2.Checked == true & this.btnLimpar.Enabled == true)
+            {
+                //txtBoxRRecebida.Text = ""; // Resistências lidas
+                txtBoxSerialRx.Text = "Desabilitado a opção de leitura externa!";
+                btnLeituraRapida.Enabled = false;
 
-            SerialPort.Write("leitura,0"); //Cancelos a leitura rápida
+                SerialPort.Write("leitura,0"); //Cancelos a leitura rápida
+            }
+            
+            
 
         }
 
@@ -486,6 +505,11 @@ namespace InterfacePC
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cBoxCOMs_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -115,6 +115,7 @@
             this.cBoxCOMs.Name = "cBoxCOMs";
             this.cBoxCOMs.Size = new System.Drawing.Size(75, 21);
             this.cBoxCOMs.TabIndex = 17;
+            this.cBoxCOMs.SelectedIndexChanged += new System.EventHandler(this.cBoxCOMs_SelectedIndexChanged);
             // 
             // txtBoxRRecebida
             // 
@@ -209,6 +210,7 @@
             // 
             // btnLimpar
             // 
+            this.btnLimpar.Enabled = false;
             this.btnLimpar.Location = new System.Drawing.Point(447, 122);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(75, 23);
