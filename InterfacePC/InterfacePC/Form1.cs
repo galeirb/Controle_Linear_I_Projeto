@@ -501,6 +501,7 @@ namespace InterfacePC
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
+            //SerialPort.Write("status_arduino,2");
             SerialPort.Close();
         }
 
@@ -510,6 +511,11 @@ namespace InterfacePC
         }
 
         private void cBoxCOMs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

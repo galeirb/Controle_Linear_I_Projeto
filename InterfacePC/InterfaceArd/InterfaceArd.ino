@@ -97,6 +97,15 @@ void loop() {
           lcd.print("Aguardando...");
           str_temp = "";
         }
+        if (str_temp == "2") {
+          lcd.clear();
+          lcd.setCursor(0, 0);
+          lcd.print("Selector Automa-");
+          lcd.setCursor(0, 1);
+          lcd.print("tizado de Resist!");
+          str_temp = "";
+        }
+
 
 
       }
@@ -110,7 +119,7 @@ void loop() {
 
         // Manda esses dados para o PC
 
-        Serial.print("--> Valor de R1 recebido: ");
+        Serial.print("--> Valor recebido: ");
         lcd.clear();
         lcd.setCursor(0, 0);
         //lcd.noCursor();

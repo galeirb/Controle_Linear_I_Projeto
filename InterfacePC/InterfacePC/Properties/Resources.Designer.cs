@@ -153,6 +153,16 @@ namespace InterfacePC.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap tela_inicial_micro {
+            get {
+                object obj = ResourceManager.GetObject("tela_inicial_micro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap wallpaperroggo_ {
             get {
                 object obj = ResourceManager.GetObject("wallpaperroggo]", resourceCulture);

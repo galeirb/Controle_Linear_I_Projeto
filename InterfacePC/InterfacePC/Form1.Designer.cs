@@ -41,12 +41,12 @@
             this.cBoxPeso1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnAuto = new System.Windows.Forms.Button();
             this.txtBoxValor1 = new System.Windows.Forms.TextBox();
             this.btnIniciar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnDesconectar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
-            this.btnAuto = new System.Windows.Forms.Button();
             this.btnNaoClica = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -62,7 +62,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(499, 333);
+            this.label4.Location = new System.Drawing.Point(353, 235);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 13);
             this.label4.TabIndex = 22;
@@ -70,12 +70,12 @@
             // 
             // txtBoxSerialRx
             // 
-            this.txtBoxSerialRx.Location = new System.Drawing.Point(302, 243);
+            this.txtBoxSerialRx.Location = new System.Drawing.Point(269, 249);
             this.txtBoxSerialRx.Multiline = true;
             this.txtBoxSerialRx.Name = "txtBoxSerialRx";
             this.txtBoxSerialRx.ReadOnly = true;
             this.txtBoxSerialRx.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBoxSerialRx.Size = new System.Drawing.Size(445, 85);
+            this.txtBoxSerialRx.Size = new System.Drawing.Size(237, 85);
             this.txtBoxSerialRx.TabIndex = 20;
             this.txtBoxSerialRx.TextChanged += new System.EventHandler(this.txtBoxSerialRx_TextChanged);
             // 
@@ -94,11 +94,12 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(599, 213);
+            this.label3.Location = new System.Drawing.Point(591, 115);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 21;
             this.label3.Text = "Resistências lidas";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // btnConectar
             // 
@@ -124,12 +125,12 @@
             // 
             // txtBoxRRecebida
             // 
-            this.txtBoxRRecebida.Location = new System.Drawing.Point(530, 113);
+            this.txtBoxRRecebida.Location = new System.Drawing.Point(522, 131);
             this.txtBoxRRecebida.Multiline = true;
             this.txtBoxRRecebida.Name = "txtBoxRRecebida";
             this.txtBoxRRecebida.ReadOnly = true;
             this.txtBoxRRecebida.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtBoxRRecebida.Size = new System.Drawing.Size(228, 97);
+            this.txtBoxRRecebida.Size = new System.Drawing.Size(228, 203);
             this.txtBoxRRecebida.TabIndex = 15;
             this.txtBoxRRecebida.TextChanged += new System.EventHandler(this.txtBoxRRecebida_TextChanged);
             // 
@@ -142,9 +143,9 @@
             "Ω",
             "kΩ",
             "MΩ"});
-            this.cBoxPeso1.Location = new System.Drawing.Point(93, 52);
+            this.cBoxPeso1.Location = new System.Drawing.Point(80, 46);
             this.cBoxPeso1.Name = "cBoxPeso1";
-            this.cBoxPeso1.Size = new System.Drawing.Size(47, 21);
+            this.cBoxPeso1.Size = new System.Drawing.Size(54, 21);
             this.cBoxPeso1.TabIndex = 4;
             this.cBoxPeso1.SelectedIndexChanged += new System.EventHandler(this.cBoxPeso1_SelectedIndexChanged);
             // 
@@ -153,11 +154,12 @@
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.cBoxPeso1);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.btnAuto);
             this.groupBox1.Controls.Add(this.txtBoxValor1);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox1.Location = new System.Drawing.Point(69, 109);
+            this.groupBox1.Location = new System.Drawing.Point(80, 109);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(169, 90);
+            this.groupBox1.Size = new System.Drawing.Size(147, 112);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleção do resistor";
@@ -165,16 +167,27 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 26);
+            this.label1.Location = new System.Drawing.Point(21, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Resistência desejada:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // btnAuto
+            // 
+            this.btnAuto.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btnAuto.Location = new System.Drawing.Point(16, 77);
+            this.btnAuto.Name = "btnAuto";
+            this.btnAuto.Size = new System.Drawing.Size(54, 20);
+            this.btnAuto.TabIndex = 25;
+            this.btnAuto.Text = "Auto";
+            this.btnAuto.UseVisualStyleBackColor = true;
+            this.btnAuto.Click += new System.EventHandler(this.btnAuto_Click);
+            // 
             // txtBoxValor1
             // 
-            this.txtBoxValor1.Location = new System.Drawing.Point(21, 53);
+            this.txtBoxValor1.Location = new System.Drawing.Point(16, 46);
             this.txtBoxValor1.MaxLength = 5;
             this.txtBoxValor1.Name = "txtBoxValor1";
             this.txtBoxValor1.Size = new System.Drawing.Size(54, 20);
@@ -183,9 +196,9 @@
             // 
             // btnIniciar
             // 
-            this.btnIniciar.Location = new System.Drawing.Point(302, 198);
+            this.btnIniciar.Location = new System.Drawing.Point(306, 198);
             this.btnIniciar.Name = "btnIniciar";
-            this.btnIniciar.Size = new System.Drawing.Size(100, 34);
+            this.btnIniciar.Size = new System.Drawing.Size(75, 23);
             this.btnIniciar.TabIndex = 16;
             this.btnIniciar.Text = "Iniciar";
             this.btnIniciar.UseVisualStyleBackColor = true;
@@ -198,7 +211,7 @@
             this.groupBox2.Controls.Add(this.cBoxCOMs);
             this.groupBox2.Controls.Add(this.btnConectar);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox2.Location = new System.Drawing.Point(302, 109);
+            this.groupBox2.Location = new System.Drawing.Point(287, 109);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 83);
             this.groupBox2.TabIndex = 23;
@@ -222,23 +235,13 @@
             // btnLimpar
             // 
             this.btnLimpar.Enabled = false;
-            this.btnLimpar.Location = new System.Drawing.Point(427, 204);
+            this.btnLimpar.Location = new System.Drawing.Point(393, 198);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(75, 23);
             this.btnLimpar.TabIndex = 24;
             this.btnLimpar.Text = "Limpar";
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
-            // 
-            // btnAuto
-            // 
-            this.btnAuto.Location = new System.Drawing.Point(120, 205);
-            this.btnAuto.Name = "btnAuto";
-            this.btnAuto.Size = new System.Drawing.Size(75, 23);
-            this.btnAuto.TabIndex = 25;
-            this.btnAuto.Text = "Auto";
-            this.btnAuto.UseVisualStyleBackColor = true;
-            this.btnAuto.Click += new System.EventHandler(this.btnAuto_Click);
             // 
             // btnNaoClica
             // 
@@ -314,7 +317,6 @@
             this.ClientSize = new System.Drawing.Size(804, 387);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnNaoClica);
-            this.Controls.Add(this.btnAuto);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label4);
@@ -328,7 +330,8 @@
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "UI de seleção";
+            this.Text = "Separador Automatizado de Resistores";
+            this.TransparencyKey = System.Drawing.Color.DodgerBlue;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Form1_Shown);

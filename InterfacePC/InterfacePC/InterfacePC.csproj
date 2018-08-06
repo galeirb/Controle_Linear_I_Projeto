@@ -136,5 +136,8 @@
   <ItemGroup>
     <None Include="Resources\Tela de execução.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tela_inicial_micro.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
