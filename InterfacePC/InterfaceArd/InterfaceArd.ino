@@ -1,8 +1,8 @@
-//#include <Wire.h> // Protocolo I2C
+#include <Wire.h> // Protocolo I2C
 
 #include <LiquidCrystal.h>
 
-LiquidCrystal lcd(12, 9, 5, 6, 7, 8);
+LiquidCrystal lcd(53,51,49,47,45,43);
 //lcd(RS,E,x,x,x,x);
 
 // Portas utilizada no I2C
@@ -18,58 +18,20 @@ String valores; // h
 //int qtd1,qtd2,qtd3; //velocidade
 float r1;
 
-// Variáveis para realização da leitura
-const int analogPin = A3; // Porta analogica para leitura
-const int pin_qtd = 7; // Quantidade de resistores de referência utilizado + 1
-const int qtd_amostra = 20; // Quantidade de leituras que serão feitas para cada resistor
-
-const int pin[pin_qtd] = { 52, 44, 42, 40, 38, 36, 30 }; // Onde os resistores de referência estão conectado
-//const float res_referencia[pin_qtd] = { 62.0, 221.0, 9780.0, 4620.0, 327.0 };
-const float res_referencia[pin_qtd] = { 326.0, 9850.0, 62.3, 4595.0, 222.0, 998.0, 466.1 }; // Os valores dos resistores de referência
-//const float res_referencia[pin_qtd] = { 466.1 ,998.0, 222.0, 4595.0,  62.3, 9850.0,326.0}; // Os valores dos resistores de referência
-float ref; // Variável para guardar o valor de referência utilizado.
-
-
 void setup() {
   Serial.begin(9600);
   //Wire.begin(8); //Nano - 8
   //pinMode(13, OUTPUT);
   lcd.begin(16, 2); // Quantidade de colunas e linhas
 
-  for (int i = 0; i < pin_qtd; i++) {
-    pinMode(pin[i], OUTPUT);
-    digitalWrite(pin[i], LOW);
-    pinMode(pin[i], INPUT);
-    lcd.print("Selector Automa-");
+  Wire.begin();              // Configura o barramento I2C
+
+  lcd.print("Selector Automa-");
     lcd.setCursor(0, 1);
     lcd.print("tizado de Resist!");
-  }
-
 
 }
 
-float tensaoMedia() {
-  float total = 0.0;
-  for (int i = 0; i < qtd_amostra; i++) {
-    delay(0);
-    total += float(analogRead(analogPin));
-
-    /* Serial.print("Tensao = ");
-      Serial.println(analogRead(analogPin));
-      Serial.print("Pino utilizado: ");
-      Serial.println(teste);
-      Serial.println();*/
-  }
-  /*Serial.print("Tensao Total = ");
-    Serial.println(5.0*total / (qtd_amostra*1023.0));
-    Serial.println();*/
-  return 5.0 * total / (qtd_amostra * 1023.0);
-
-}
-
-float calcularResistencia(float r, float v) {
-  return r / (5.0 / v - 1.0);
-}
 
 void loop() {
 
@@ -126,7 +88,6 @@ void loop() {
         lcd.print("Valor desejado: ");
         lcd.setCursor(0, 1);
         lcd.print(r1);
-
         lcd.write(byte(144)); //Espaço
         lcd.write(byte(244));
         Serial.print(r1);
@@ -148,23 +109,14 @@ void loop() {
         // Calculo para leitura realizada
         if (leitura_rapida == "1") {
           str_temp = "";
-          float minimo = 2.5;
-          float resistencia = 100000000.0;
-
-          for (int i = 0; i < pin_qtd; i++) {
-            pinMode(pin[i], OUTPUT);
-            digitalWrite(pin[i], HIGH);
-            float v = tensaoMedia();
-            digitalWrite(pin[i], LOW);
-            pinMode(pin[i], INPUT);
-            float diferenca = abs(v - 2.5);
-
-            if (5.0 > v && diferenca < minimo) {
-              minimo = diferenca;
-              resistencia = calcularResistencia(res_referencia[i], v);
-              ref = res_referencia[i];
-            }
-          }
+          Wire.beginTransmission(44);
+          Wire.write(5);
+          //Wire.write("1");
+          Wire.endTransmission();
+          delay(500);
+          Serial.println("Mandando comando!");
+          /* -- Fazer um procedimento para que quando receber o valor
+           *  // Fazer um serial.print para o programa
           Serial.print("Resistencia = ");
           Serial.println(resistencia);
           Serial.print("Referencia utilizada: ");
@@ -179,7 +131,7 @@ void loop() {
           lcd.setCursor(0, 1);
           lcd.print("Ref: ");
           lcd.print(ref);
-          lcd.write(byte(244));
+          lcd.write(byte(244));*/
         }
 
 
@@ -198,6 +150,13 @@ void loop() {
           lcd.print("Habilitada!");
           str_temp = "";
           delay(500);
+          
+          Wire.beginTransmission(44);
+          Wire.write(4);
+          //Wire.write("1");
+          Wire.endTransmission();
+          delay(500);
+          Serial.println("Mandando comando!");
         }
         /*
               if (leitura_rapida == "2"){ // Codigo para dizer mostrar no display que foi habilitado a opção de leitura externa.
