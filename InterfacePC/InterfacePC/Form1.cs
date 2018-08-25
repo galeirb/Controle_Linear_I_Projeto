@@ -479,10 +479,29 @@ namespace InterfacePC
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SerialPort.Write("leitura,1"); // 1- DESEJAMOS SABER O VALOR LIDO
+            /* 
 
+            DialogResult res = MessageBox.Show("A fonte de alimentação está ligada?", "Alimentação", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
 
+             if (res == DialogResult.Yes)
+                 {
+                 */
+            // 1- DESEJAMOS SABER O VALOR LIDO
+            /*
         }
+         if (res == DialogResult.No)
+         {
+             DialogResult LEL = MessageBox.Show("Ligue a fonte!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);*/
+            /*
+            //btnLeituraRapida.Enabled = false; // Botão de leitura rápida
+            radioButton2.Checked = true; // Deixa apenas selecionado o OFF
+            radioButton1.Enabled = false; // Mantém o botão desativado*/
+
+            SerialPort.Write("leitura,1");
+        }
+
+
+    }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {

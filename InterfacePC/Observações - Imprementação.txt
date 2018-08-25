@@ -1,0 +1,11 @@
+Problemas encontrados na contrução do controlar
+- Um dos LED puxava muita corrente, desta forma, foi necessário a troca
+- Solda entre os componentes, algumas precisaram ser refeitas
+- Inicialmente, pela questão de prática, foi mais complicado colocar a solda, pegando a prática
+conseguimos melhorar o manuseio
+- Chegou a um dos fio (no caso o branco) quebrar com a questão do uso.
+- No mega, em alguma portas digitais, o jumps para o controle tinha mal, com isso, foi colocado um LED
+na parte do cicuito de ativação pelo arduino, para identificamos que realmente o arduino mandou o
+comando.
+- Com a questão da sequencia do motor já identificado, usamos LED para na saída, para ter a 
+certeza que estava vindo 12 v para o motor.
